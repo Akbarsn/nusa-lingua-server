@@ -1,6 +1,8 @@
 require('dotenv').config()
 
+const jwt = require('jsonwebtoken')
 const JWT_SECRET = process.env.JWT_SECRET
+const {NoToken, GeneralError} = require('../utils/errors')
 
 module.exports = {
     async CheckToken(req, res, next) {
