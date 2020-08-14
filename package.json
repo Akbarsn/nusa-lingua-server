@@ -1,0 +1,21 @@
+{
+  "name": "nusa-lingua",
+  "version": "1.0.0",
+  "description": "Nusa Lingua is an application for learning native language in Indonesia",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Akbarsn",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.29"
+  }
+}
