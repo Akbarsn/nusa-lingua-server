@@ -4,8 +4,8 @@
   "description": "Nusa Lingua is an application for learning native language in Indonesia",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node app.js"
+    "test": "mocha",
+    "start": "node app.js"
   },
   "keywords": [
     "express"
@@ -14,9 +14,15 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "joi": "^17.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.29"
+    "mocha": "^8.1.1",
+    "mongoose": "^5.9.29",
+    "validator": "^13.1.1"
   }
 }
