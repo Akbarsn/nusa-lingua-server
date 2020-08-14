@@ -6,6 +6,6 @@ const {CheckToken} = require('../middleware/AuthMiddleware')
 
 router.use('/auth', authRouter)
 
-router.use('/', CheckToken, homeRouter) 
+router.use('/home', CheckToken, homeRouter) 
 
 module.exports = router

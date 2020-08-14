@@ -6,7 +6,13 @@ const UserSchema = schema({
     fullName: String,
     username: String,
     password: String,
-    email: String
+    email: String,
+    courses: [
+        {
+            title: String,
+            progress: Number //Max 100
+        }
+    ]
 })
 
 module.exports = mongoose.model("User", UserSchema)

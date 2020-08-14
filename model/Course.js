@@ -9,6 +9,7 @@ const CourseSchema = new schema({
     duration: Number, //In Hours
     topics: [
         {
+            id: Number,
             title: String,
             content: String,
             videoURI: String

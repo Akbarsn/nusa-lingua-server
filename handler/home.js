@@ -59,9 +59,6 @@ module.exports = {
             next(error)
         }
     },
-    async GetTopicsBasedOnCourseID(req, res, next) {
-
-    },
     async GetHomePage(req,res,next){
         try {
             const language = req.params.language
