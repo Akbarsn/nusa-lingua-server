@@ -20,7 +20,7 @@ module.exports = {
     async GetLatestCourse(req, res, next) {
         try {
             const language = req.params.language
-            const latestCourse = await course.find({ language: language }).sort({ createdAt: desc }).limit(3)
+            const latestCourse = await course.find({ language: language }).sort({ createdAt: -1 }).limit(3)
 
             if (latestCourse) {
                 res.status(200).json(latestCourse)
@@ -34,7 +34,7 @@ module.exports = {
     async GetPopularCourse(req, res, next) {
         try {
             const language = req.params.language
-            const popularCourse = await course.find({ language: language }).sort({ userJoined: desc }).limit(3)
+            const popularCourse = await course.find({ language: language }).sort({ userJoined: -1 }).limit(3)
 
             if (popularCourse) {
                 res.status(200).json(popularCourse)
@@ -61,5 +61,25 @@ module.exports = {
     },
     async GetTopicsBasedOnCourseID(req, res, next) {
 
+    },
+    async GetHomePage(req,res,next){
+        try {
+            const language = req.params.language
+            const popularCourse = await course.find({ language: language }).sort({ userJoined: -1 }).limit(3)
+            const latestCourse = await course.find({ language: language }).sort({ createdAt: -1 }).limit(3)
+            const courses = await course.find({ language: language })
+
+            if(popularCourse && latestCourse && courses){
+                res.status(200).json({
+                    popular: popularCourse,
+                    latest: latestCourse,
+                    all: courses
+                })
+            } else {
+                throw new GeneralError("Query failed")
+            }
+        } catch (error) {
+            next(error)
+        }
     }
 }
