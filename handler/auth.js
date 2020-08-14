@@ -40,9 +40,7 @@ module.exports = {
 
                         const query = await user.save()
                         if (query) {
-                            res.status(200).json({
-                                user
-                            })
+                            res.status(200).json(user)
                         } else {
                             throw new GeneralError("Query failed")
                         }
