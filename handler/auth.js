@@ -6,7 +6,6 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 const { BadRequest, GeneralError, NotAcceptable } = require('../utils/errors')
-const { GetIDUser } = require('../utils/func')
 
 const JWT_SECRET = process.env.JWT_SECRET
 
