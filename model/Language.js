@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
-const schema = mongoose.Schema
 
-const LanguageSchema = schema({
+const LanguageSchema = new mongoose.Schema({
     name: String
 })
 

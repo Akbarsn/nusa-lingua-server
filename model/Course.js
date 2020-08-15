@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
 const { string } = require('joi')
-const schema = mongoose.Schema
 
-const CourseSchema = new schema({
+const CourseSchema = new mongoose.Schema({
     title: String,
     language: String,
     mentor: String,

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
-const schema = mongoose.Schema
 
-const UserSchema = schema({
+const UserSchema = new mongoose.Schema({
     // _id: Number,
     fullName: String,
     username: String,
@@ -9,8 +8,10 @@ const UserSchema = schema({
     email: String,
     courses: [
         {
+            courseID: mongoose.Schema.Types.ObjectId,
             title: String,
-            progress: Number //Max 100
+            progress: {type: Number, default: 0}, //Max 100
+            isGraduate: {type: Boolean, default: false}
         }
     ]
 })
